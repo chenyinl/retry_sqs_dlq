@@ -7,10 +7,10 @@ let lambda = new AWS.Lambda();
 const axios = require('axios');
 
 /* where the SQS come from, for the retry */
-const originalSQSUrl = 'https://sqs.us-west-2.amazonaws.com/045483043004/DEV-Timeout';
+const originalSQSUrl = 'https://sqs.us-west-2.amazonaws.com/045XXXXXXXXXX/DEV-Timeout';
 
 /* Dead Letter Queue */
-const dlqSQSUrl      = 'https://sqs.us-west-2.amazonaws.com/045483043004/TEST-Timeout-DLQ';
+const dlqSQSUrl      = 'https://sqs.us-west-2.amazonaws.com/045XXXXXXXXXX/TEST-Timeout-DLQ';
 
 const max_retry      = 5;
 

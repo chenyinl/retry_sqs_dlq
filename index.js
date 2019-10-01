@@ -43,6 +43,11 @@ exports.handler = function (event, context)  {
           console.log("Http request successed.");
       })
       .catch(function(error){
+          /* use status code to decide what to do */
+          if(error.response.status == 502){
+              console.log("The error is bad gataway.");
+          }
+          /* if there is no status code, use the message itself */
           if(error.message.includes('timeout')){
               processRetry(url, retry, payload, originalSQSUrl);
               return;
